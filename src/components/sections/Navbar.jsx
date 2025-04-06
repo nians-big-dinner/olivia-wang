@@ -57,7 +57,7 @@ const Navbar = () => {
     >
       <header className='flex sm:gap-4 items-center'>
         <img
-          src='/images/credits1.png'
+          src='./images/credits1.png'
           alt='avatar'
           className='size-8.5 my-0.5 ml-2 cursor-pointer hover:scale-90'
           onClick={() => window.open('https://linktr.ee/whalesharkollie', '_blank')}
