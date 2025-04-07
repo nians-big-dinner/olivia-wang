@@ -23,8 +23,9 @@ const Contact = () => {
       scrollTrigger: {
         ease: "power3.inOut",
         trigger: sectionRef.current,
-        start: "top+=70lvh bottom",
-        end: "+=30lvh",        
+        start: "top+=500lvh bottom",
+        end: "+=300lvh",
+        markers: true,
         scrub: true
       }
     });
