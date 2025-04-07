@@ -25,6 +25,7 @@ const ConceptArt = () => {
             requestAnimationFrame(() => {
                 setIsReady(true);
             });
+            
         }
     }, [sectionRef.current]);
 
