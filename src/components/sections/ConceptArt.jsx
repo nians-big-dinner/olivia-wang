@@ -26,7 +26,7 @@ const ConceptArt = () => {
                 setIsReady(true);
             });
         }
-    }, []);
+    }, [sectionRef.current]);
 
     useGSAP(() => {
         if (!isReady || !sectionRef.current) return;
