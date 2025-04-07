@@ -21,7 +21,7 @@ const ConceptArt = () => {
     
     useGSAP(() => {
         const viewportWidth = window.innerWidth;
-        const imageAspectRatio = 2290 / 1330;
+        const imageAspectRatio = 2290 / 1330; // height / width
         const calculatedHeight = viewportWidth * imageAspectRatio;
         
         layers.forEach(({ ref, y, start, end, ease }) => {
@@ -31,7 +31,7 @@ const ConceptArt = () => {
                 y: -calculatedHeight * y,
                 ease: ease || "none",
                 scrollTrigger: {
-                    trigger: "#concept-art-section",
+                    trigger: sectionRef.current, // Use the section's ID instead of ref
                     start: `top+=${calculatedHeight * start} bottom`,
                     end: `+=${calculatedHeight * end}px`,
                     scrub: true,
