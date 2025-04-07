@@ -43,7 +43,7 @@ const AboutTwo = () => {
             .to(textOneRef.current, { opacity: 0, y: -20, duration: 1 })
             .from(textTwoRef.current, { opacity: 0, y: 20, duration: 1 })
             .to({}, { duration: 2 });
-    })
+    }, {scope: sectionRef})
 
     return (
         <div ref={sectionRef} className='relative w-screen h-lvh bg-cover xl:bg-center bg-no-repeat bg-[url("/images/kitchen_background.png")]'>

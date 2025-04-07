@@ -6,18 +6,18 @@ const ConceptArtThree = () => {
     const containerRef = useRef(null)
     const sectionRef = useRef(null)
 
-    // useGSAP(() => {
-    //     gsap.from(containerRef.current, {
-    //         y: -100,
-    //         scrollTrigger: {
-    //             ease: "power3.in",
-    //             trigger: sectionRef.current,
-    //             start: "top bottom",
-    //             end: "bottom bottom",
-    //             scrub: true
-    //         }
-    //     });;
-    // })
+    useGSAP(() => {
+        gsap.from(containerRef.current, {
+            y: -100,
+            scrollTrigger: {
+                ease: "power3.in",
+                trigger: sectionRef.current,
+                start: "top bottom",
+                end: "bottom bottom",
+                scrub: true
+            }
+        });;
+    }, {scope: sectionRef})
     
     return (
         <div ref={sectionRef} className='py-[40%] md:py-[20%] lg:py-[4%] w-screen relative bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.4)_90%,rgba(17,17,17,0.6)_100%),url("/images/red_background.png")]'>

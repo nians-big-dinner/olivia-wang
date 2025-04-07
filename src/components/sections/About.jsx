@@ -66,7 +66,7 @@ const About = () => {
       .to(textRef.current, { opacity: 0, ease: "power3.inOut" }, 0.1)
       .to(backgroundRef.current, { opacity: 0.5, ease: "power3.inOut" }, 0.1)
       .to({}, { duration: 0.2 })
-  });
+  }, {scope: sectionRef} );
 
   return (
       <div id="about-section" ref={sectionRef} className='w-screen h-lvh relative overflow-hidden bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.6)_90%,rgba(17,17,17,0.6)_100%),url("/images/red_background.png")]'>

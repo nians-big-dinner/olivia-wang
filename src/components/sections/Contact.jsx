@@ -23,8 +23,8 @@ const Contact = () => {
       scrollTrigger: {
         ease: "power3.inOut",
         trigger: sectionRef.current,
-        start: `top+=${sectionRef.current.offsetHeight * 0.7}px bottom`,
-        end: `+=${sectionRef.current.offsetHeight * 0.3}px`,
+        start: "top+=70lvh bottom",
+        end: "+=30lvh",        
         scrub: true
       }
     });
@@ -45,7 +45,7 @@ const Contact = () => {
       // .from(textBackgroundRef.current, { opacity: 0, scale: 0, duration: 1 })
       .from(textOneRef.current, { opacity: 0, y: 20, ease: "power2.out" }, "+=0.6")
       .from(textTwoRef.current, { opacity: 0, y: 20, ease: "power2.out" }, "+=0.6")
-  })
+  }, {scope: sectionRef})
 
   return (
     <footer id="contact-section" ref={sectionRef} className='relative w-screen h-lvh bg-cover bg-no-repeat bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.5)_100%),url("/images/living_room_background.png")]'>

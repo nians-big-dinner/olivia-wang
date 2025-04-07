@@ -12,46 +12,28 @@ const ConceptArt = () => {
     const bgRef3 = useRef(null);
     const bgRef4 = useRef(null);
 
-    // useGSAP(() => {
-    //         // gsap.from(bgRef1.current, {
-    //         //     y: -sectionRef.current.offsetHeight * 0.05,
-    //         //     ease: "power2.out",
-    //         //     scrollTrigger: {
-    //         //         trigger: sectionRef.current,
-    //         //         start: `top+=${sectionRef.current.offsetHeight * 0.10}px bottom`,
-    //         //         end: `+=${sectionRef.current.offsetHeight * 0.2}px`,
-    //         //         scrub: true,
-    //         //     },
-    //         // });
-    //         // gsap.from(bgRef2.current, {
-    //         //     y: -sectionRef.current.offsetHeight * 0.1,
-    //         //     ease: "power2.in",
-    //         //     scrollTrigger: {
-    //         //         trigger: sectionRef.current,
-    //         //         start: `top+=${sectionRef.current.offsetHeight * 0.3}px bottom`,
-    //         //         end: `+=${sectionRef.current.offsetHeight * 0.11}px`,
-    //         //         scrub: true,
-    //         //     },
-    //         // });
-    //         // gsap.from(bgRef3.current, {
-    //         //     y: -sectionRef.current.offsetHeight * 0.2,
-    //         //     scrollTrigger: {
-    //         //         trigger: sectionRef.current,
-    //         //         start: `top+=${sectionRef.current.offsetHeight * 0.35}px bottom`,
-    //         //         end: `+=${sectionRef.current.offsetHeight * 0.35}px`,
-    //         //         scrub: true,
-    //         //     },
-    //         // });
-    //         // gsap.from(bgRef4.current, {
-    //         //     y: -sectionRef.current.offsetHeight * 0.2,
-    //         //     scrollTrigger: {
-    //         //         trigger: sectionRef.current,
-    //         //         start: `top+=${sectionRef.current.offsetHeight * 0.65}px bottom`,
-    //         //         end: `+=${sectionRef.current.offsetHeight * 0.15}px`,
-    //         //         scrub: true,
-    //         //     },
-    //         // });
-    // });
+// const layers = [
+//   { ref: bgRef1, y: -0.05, start: 0.10, end: 0.2, ease: "power2.out" },
+//   { ref: bgRef2, y: -0.1,  start: 0.3,  end: 0.11, ease: "power2.in" },
+//   { ref: bgRef3, y: -0.2,  start: 0.35, end: 0.35 },
+//   { ref: bgRef4, y: -0.2,  start: 0.65, end: 0.15 },
+// ];
+
+// useGSAP(() => {
+//   layers.forEach(({ ref, y, start, end, ease }) => {
+//     gsap.from(ref.current, {
+//       y: -sectionRef.current.offsetHeight * y,
+//       ease: ease || "none",
+//       scrollTrigger: {
+//         trigger: sectionRef.current,
+//         start: `top+=${sectionRef.current.offsetHeight * start}px bottom`,
+//         end: `+=${sectionRef.current.offsetHeight * end}px`,
+//         scrub: true,
+//       },
+//     });
+//   });
+// }, { scope: sectionRef });
+
 
     return (
         <div id="concept-art-section" className="relative w-screen">

@@ -31,14 +31,11 @@ const App = () => {
       <main>
         <div className="overflow-hidden relative w-screen">
           <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <AboutTwo />
-            <ConceptArt />
-            <ConceptArtTwo />
-            <ConceptArtThree />
-          </main>
+          <Hero />
+          <About />
+          <AboutTwo />
+          <ConceptArtTwo />
+          <ConceptArtThree />
           <Contact />
         </div>
       </main>
