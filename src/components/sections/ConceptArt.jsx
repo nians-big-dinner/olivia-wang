@@ -11,6 +11,7 @@ const ConceptArt = () => {
     const bgRef2 = useRef(null);
     const bgRef3 = useRef(null);
     const bgRef4 = useRef(null);
+
     const layers = [
         { ref: bgRef1, y: 0.05, start: 0.1, end: 0.2, ease: "power2.out" },
         { ref: bgRef2, y: 0.1,  start: 0.3,  end: 0.11, ease: "power2.in" },
@@ -30,7 +31,7 @@ const ConceptArt = () => {
                 y: -calculatedHeight * y,
                 ease: ease || "none",
                 scrollTrigger: {
-                    trigger: "#concept-art-section", // Use the section's ID instead of ref
+                    trigger: "#concept-art-section",
                     start: `top+=${calculatedHeight * start} bottom`,
                     end: `+=${calculatedHeight * end}px`,
                     scrub: true,
@@ -48,7 +49,6 @@ const ConceptArt = () => {
                 ref={sectionRef}
                 src='./images/long_background/long_background.png'
                 className="z-0 w-full"
-                onLoad={() => setIsReady(true)}
             />
             <img
                 src='./images/long_background/long_background1.png'

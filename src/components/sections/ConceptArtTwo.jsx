@@ -51,10 +51,10 @@ const ConceptArtTwo = () => {
       ref={sectionRef}
       className="w-full h-lvh overflow-hidden relative bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.8)_100%),url('/images/red_background.png')]"
     >
-      <div className='absolute top-10 md:top-5 z-40 text-glow text-6xl md:text-8xl text-center overflow-show w-fit h-fit text-white absolute-center-w font-dosis-semibold'>
-        <div className='absolute w-full h-full p-8 px-12 bg-red-950/80 rounded-full blur-2xl lg:blur-xl z-10' />
-        <span className='relative z-20'>Colourscript</span>
-      </div>
+            <div className='absolute top-5 lg:top-2 text-glow text-6xl lg:text-8xl text-center overflow-show w-fit h-fit text-white absolute-center-w font-dosis-semibold'>
+                <div className='absolute w-full h-full lg:p-8 lg:px-12 bg-red-950/80 rounded-full blur-2xl lg:blur-2xl z-10' />
+                <span className='relative z-20'>Colourscript</span>
+            </div>
 
       <div  className="flex flex-col gap-4 items-center justify-center w-full h-full">
         <div ref={containerRef} className='flex gap-4 z-30'>

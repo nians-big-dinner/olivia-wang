@@ -25,7 +25,6 @@ const Contact = () => {
         trigger: sectionRef.current,
         start: "top+=500lvh bottom",
         end: "+=300lvh",
-        markers: true,
         scrub: true
       }
     });
@@ -67,7 +66,7 @@ const Contact = () => {
           </p>
         </div>
         <div ref={textTwoRef} className='flex flex-col gap-10 md:gap-0 md:flex-row w-full items-center justify-around'>
-          <adress className='flex flex-col gap-1 md:gap-4'>
+          <address className='flex flex-col gap-1 md:gap-4'>
             <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
               <img src='./images/credits1.png' className='drop-shadow size-8 xl:size-16' />
               Personal contact info:
@@ -107,8 +106,8 @@ const Contact = () => {
                 <span className='font-materialsymbols-regular align-middle'>open_in_new</span>
               </a>
             </div>
-          </adress>
-          <p className='flex flex-col gap-1 md:gap-4'>
+          </address>
+          <div className='flex flex-col gap-1 md:gap-4'>
             <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
               <img src='./images/credits2.png' className='drop-shadow size-8 xl:size-16' />
               Film Credits :
@@ -125,7 +124,7 @@ const Contact = () => {
                 <span className='font-materialsymbols-regular align-middle'>outgoing_mail</span>
               </a>)
             </div>
-          </p>
+          </div>
 
         </div>
       </div>
