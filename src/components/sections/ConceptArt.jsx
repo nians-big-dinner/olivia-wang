@@ -11,44 +11,33 @@ const ConceptArt = () => {
     const bgRef2 = useRef(null);
     const bgRef3 = useRef(null);
     const bgRef4 = useRef(null);
-    const [isReady, setIsReady] = useState(false);
-
     const layers = [
-        { ref: bgRef1, y: 0.05, start: 0.10, end: 0.2, ease: "power2.out" },
+        { ref: bgRef1, y: 0.05, start: 0.1, end: 0.2, ease: "power2.out" },
         { ref: bgRef2, y: 0.1,  start: 0.3,  end: 0.11, ease: "power2.in" },
         { ref: bgRef3, y: 0.2,  start: 0.35, end: 0.35 },
         { ref: bgRef4, y: 0.2,  start: 0.65, end: 0.15 },
     ];
     
-    useEffect(() => {
-        if (sectionRef.current) {
-            requestAnimationFrame(() => {
-                setIsReady(true);
-            });
-            
-        }
-    }, [sectionRef.current]);
-
     useGSAP(() => {
-        if (!isReady || !sectionRef.current) return;
-        
-        const sectionHeight = sectionRef.current.offsetHeight;
+        const viewportWidth = window.innerWidth;
+        const imageAspectRatio = 2290 / 1330;
+        const calculatedHeight = viewportWidth * imageAspectRatio;
         
         layers.forEach(({ ref, y, start, end, ease }) => {
             if (!ref.current) return;
             
             gsap.from(ref.current, {
-                y: -sectionHeight * y,
+                y: -calculatedHeight * y,
                 ease: ease || "none",
                 scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: `top+=${sectionHeight * start}px bottom`,
-                    end: `+=${sectionHeight * end}px`,
+                    trigger: "#concept-art-section", // Use the section's ID instead of ref
+                    start: `top+=${calculatedHeight * start} bottom`,
+                    end: `+=${calculatedHeight * end}px`,
                     scrub: true,
                 },
             });
         });
-    }, { scope: sectionRef, dependencies: [isReady] });
+    }, []);
 
     return (
         <div id="concept-art-section" className="relative w-screen">
