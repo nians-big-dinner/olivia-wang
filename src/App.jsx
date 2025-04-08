@@ -41,7 +41,6 @@ const App = () => {
           <ConceptArtTwo />
           <ConceptArtThree />
           </main>
-          <div id='contact-section'/>
           <Contact />
         </div>
   );

@@ -18,13 +18,12 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
       setIsTop(currentScrollY === 0);
 
-      // Only animate if not at the top of the page
       if (currentScrollY > 0) {
         if (currentScrollY > lastScrollY) {
-          // Scrolling down - hide the navbar
+
           gsap.to(navContainerRef.current, { y: "-120%", duration: 0.3 });
         } else {
-          // Scrolling up - show the navbar
+
           gsap.to(navContainerRef.current, { y: "0%", duration: 0.3 });
         }
       }
@@ -49,11 +48,23 @@ const Navbar = () => {
     }
   };
 
+  const scrollToContact = () => {
+    
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: "max",
+        offsetY: 0
+      },
+      ease: "power3.inOut"
+    });
+  };
+
   return (
     <nav
       ref={navContainerRef}
       className={`fixed overflow-hidden flex justify-between rounded-full sm:px-2 top-2.5 py-1.5 h-fit inset-x-0 sm:inset-x-4 z-50
-        transition-colors duration-300 select-none ${isTop ? 'bg-transparent' : 'bg-red-950'}`}
+          transition-colors duration-300 select-none ${isTop ? 'bg-transparent' : 'bg-red-950'}`}
     >
       <header className='flex gap-1.5 md:gap-4 items-center'>
         <img
@@ -69,20 +80,20 @@ const Navbar = () => {
         />
       </header>
       <div className='flex sm:gap-4 items-center'>
-        <Button 
-          text='About' 
-          className='bg-transparent text-white hover:bg-white hover:text-black' 
+        <Button
+          text='About'
+          className='bg-transparent text-white hover:bg-white hover:text-black'
           onClick={() => scrollToSection('about-section')}
         />
-        <Button 
-          text='Concept art' 
-          className='bg-transparent text-white hover:bg-white hover:text-black' 
+        <Button
+          text='Concept art'
+          className='bg-transparent text-white hover:bg-white hover:text-black'
           onClick={() => scrollToSection('concept-art-section')}
         />
-        <Button 
-          text='Contact' 
-          className='bg-transparent text-white hover:bg-white hover:text-black' 
-          onClick={() => scrollToSection('contact-section')}
+        <Button
+          text='Contact'
+          className='bg-transparent text-white hover:bg-white hover:text-black'
+          onClick={scrollToContact}
         />
       </div>
     </nav>
