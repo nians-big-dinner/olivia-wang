@@ -32,7 +32,7 @@ const ConceptArt = () => {
                 },
             });
         });
-    }, []);
+    }, {scope: sectionRef});
 
     return (
         <div ref={sectionRef} className="relative w-screen h-[350lvh] overflow-hidden bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.6)_90%,rgba(17,17,17,0.6)_100%),url('/images/red_background.png')]">
