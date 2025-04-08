@@ -29,7 +29,6 @@ const ConceptArt = () => {
                     start: `top+=${start} bottom`,
                     end: `+=${end}`,
                     scrub: true,
-                    markers: true
                 },
             });
         });
