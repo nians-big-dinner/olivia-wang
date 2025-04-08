@@ -48,7 +48,7 @@ const Contact = () => {
   }, {scope: sectionRef})
 
   return (
-    <footer id="contact-section" ref={sectionRef} className='relative w-screen h-lvh bg-cover bg-no-repeat bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.5)_100%),url("/images/living_room_background.png")]'>
+    <footer ref={sectionRef} className='relative w-screen h-lvh bg-cover bg-no-repeat bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.5)_100%),url("/images/living_room_background.png")]'>
       <div ref={foregroundRef} className="absolute w-full h-full bg-cover bg-no-repeat bg-[url('/images/living_room_foreground.png')]" />
       <div ref={backgroundRef} className='absolute inset-0 bg-black opacity-0' />
       <div ref={textRef} className='flex flex-col justify-center items-center gap-10 md:gap-20 w-full h-full font-dosis-regular text-lg lg:text-2xl xl:text-4xl  text-shadow-br-light text-white'>

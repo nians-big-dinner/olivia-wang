@@ -33,12 +33,15 @@ const App = () => {
           <Navbar />
           <main>
           <Hero />
+          <div id='about-section'/>
           <About />
           <AboutTwo />
+          <div id='concept-art-section'/>
           <ConceptArt />
           <ConceptArtTwo />
           <ConceptArtThree />
           </main>
+          <div id='contact-section'/>
           <Contact />
         </div>
   );
