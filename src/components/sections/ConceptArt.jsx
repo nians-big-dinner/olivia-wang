@@ -7,75 +7,79 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ConceptArt = () => {
     const sectionRef = useRef(null);
-    const bgRef1 = useRef(null);
-    const bgRef2 = useRef(null);
-    const bgRef3 = useRef(null);
-    const bgRef4 = useRef(null);
+    const bg2Ref = useRef(null);
+    const bg3Ref = useRef(null);
+    const bg4Ref = useRef(null);
+    const bg5Ref = useRef(null);
 
     const layers = [
-        { ref: bgRef1, y: 0.05, start: 0.1, end: 0.2, ease: "power2.out" },
-        { ref: bgRef2, y: 0.1,  start: 0.3,  end: 0.11, ease: "power2.in" },
-        { ref: bgRef3, y: 0.2,  start: 0.35, end: 0.35 },
-        { ref: bgRef4, y: 0.2,  start: 0.65, end: 0.15 },
+        { ref: bg2Ref, y: "-10%", start: "12%", end: "80%", ease: "power2.out" },
+        { ref: bg3Ref, y: "-10%",  start: "28%",  end: "45%", ease: "power2.in" },
+        { ref: bg4Ref, y: "-20%",  start: "40%", end: "115%" },
+        { ref: bg5Ref, y: "-23%",  start: "60%", end: "65%" },
     ];
-    
+
     useGSAP(() => {
-        const viewportWidth = window.innerWidth;
-        const imageAspectRatio = 2290 / 1330; // height / width
-        const calculatedHeight = viewportWidth * imageAspectRatio;
-        
         layers.forEach(({ ref, y, start, end, ease }) => {
-            if (!ref.current) return;
-            
             gsap.from(ref.current, {
-                y: -calculatedHeight * y,
+                y: y,
                 ease: ease || "none",
                 scrollTrigger: {
-                    trigger: sectionRef.current, // Use the section's ID instead of ref
-                    start: `top+=${calculatedHeight * start} bottom`,
-                    end: `+=${calculatedHeight * end}px`,
+                    trigger: sectionRef.current,
+                    start: `top+=${start} bottom`,
+                    end: `+=${end}`,
                     scrub: true,
+                    markers: true
                 },
             });
         });
     }, []);
 
     return (
-        <div id="concept-art-section" className="relative w-screen">
+        <div id="concept-art-section" ref={sectionRef} className="relative w-screen h-[350lvh] overflow-hidden bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.6)_90%,rgba(17,17,17,0.6)_100%),url('/images/red_background.png')]">
             <h2 className="absolute absolute-center-w text-center text-7xl md:text-9xl text-glow-gold text-white top-24 font-dosis-semibold z-50">
                 Concept art
             </h2>
-            <img
-                ref={sectionRef}
-                src='./images/long_background/long_background.png'
-                className="z-0 w-full"
-            />
-            <img
-                src='./images/long_background/long_background1.png'
-                className="absolute top-0 z-20 w-full"
-            />
-            <img
-                ref={bgRef1}
-                src='./images/long_background/long_background2.png'
-                className="absolute top-0 z-10 w-full"
-            />
-            <img
-                ref={bgRef2}
-                src='./images/long_background/long_background3.png'
-                className="absolute top-0 z-20 w-full"
-            />
-            <img
-                ref={bgRef3}
-                src='./images/long_background/long_background4.png'
-                className="absolute top-0 w-full"
-            />
-            <img
-                ref={bgRef4}
-                src='./images/long_background/long_background5.png'
-                className="absolute top-0 w-full"
-            />
+            <div  className="absolute inset-0 flex justify-center z-0">
+                <img
+                    src="./images/long_background/long_background.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
+            <div  className="absolute inset-0 flex justify-center z-30">
+                <img
+                    src="./images/long_background/long_background1.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
+            <div ref={bg2Ref} className="absolute inset-0 flex justify-center z-20">
+                <img
+                    src="./images/long_background/long_background2.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
+            <div ref={bg3Ref} className="absolute inset-0 flex justify-center z-20">
+                <img
+                    src="./images/long_background/long_background3.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
+            <div ref={bg4Ref} className="absolute inset-0 flex justify-center z-10">
+                <img
+                    src="./images/long_background/long_background4.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
+            <div ref={bg5Ref} className="absolute inset-0 flex justify-center z-10">
+                <img
+                    src="./images/long_background/long_background5.png"
+                    className="h-full w-auto object-cover object-center"
+                />
+            </div>
         </div>
     );
 };
+
+
 
 export default ConceptArt;

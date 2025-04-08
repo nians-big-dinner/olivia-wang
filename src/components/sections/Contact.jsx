@@ -66,7 +66,7 @@ const Contact = () => {
           </p>
         </div>
         <div ref={textTwoRef} className='flex flex-col gap-10 md:gap-0 md:flex-row w-full items-center justify-around'>
-          <address className='flex flex-col gap-1 md:gap-4'>
+          <address className='flex flex-col not-italic gap-1 md:gap-4'>
             <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
               <img src='./images/credits1.png' className='drop-shadow size-8 xl:size-16' />
               Personal contact info:

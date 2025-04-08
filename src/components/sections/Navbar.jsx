@@ -55,11 +55,11 @@ const Navbar = () => {
       className={`fixed overflow-hidden flex justify-between rounded-full sm:px-2 top-2.5 py-1.5 h-fit inset-x-0 sm:inset-x-4 z-50
         transition-colors duration-300 select-none ${isTop ? 'bg-transparent' : 'bg-red-950'}`}
     >
-      <header className='flex sm:gap-4 items-center'>
+      <header className='flex gap-1.5 md:gap-4 items-center'>
         <img
           src='./images/credits1.png'
-          alt='avatar'
-          className='size-8.5 my-0.5 ml-2 cursor-pointer hover:scale-90'
+          alt='Linktree icon'
+          className='size-8.5 my-0.5 ml-2.5 cursor-pointer hover:scale-90'
           onClick={() => window.open('https://linktr.ee/whalesharkollie', '_blank')}
         />
         <Button
