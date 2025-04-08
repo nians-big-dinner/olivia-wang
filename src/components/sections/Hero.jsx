@@ -56,7 +56,7 @@ const Hero = () => {
           ease: 'power3.out'
         }, '-=0.1');
     }
-  }, {scope: videoContainerRef}[isImageClicked]);
+  }, [isImageClicked]);
 
   const toggleVideo = () => {
     if (!videoRef.current) return;
