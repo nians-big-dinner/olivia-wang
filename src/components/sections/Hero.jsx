@@ -91,6 +91,7 @@ const Hero = () => {
           onClick={() => window.getSelection().removeAllRanges()}
           className='w-full h-lvh object-cover'
           autoPlay
+          playsInline
           muted
           loop
           src='./videos/film.mp4'
