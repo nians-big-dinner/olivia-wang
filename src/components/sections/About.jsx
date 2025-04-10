@@ -62,7 +62,7 @@ const About = () => {
       .to({}, { duration: 0.1 })
       .to(imageRef.current, { scale: 0, opacity: 0, ease: "power3.inOut" }, 0.1)
       .to(cornerImageRef.current, { opacity: 0, duration: 0.5 }, 0.1)
-      .fromTo(fullScreenImageRef.current, { scale: 0, x: '-50%' }, { scale: 1, x: '-50%', ease: "power2.inOut" }, 0.1)
+      .fromTo(fullScreenImageRef.current, { scale: 0 }, { scale: 1, ease: "power2.inOut" }, 0.1)
       .to(textRef.current, { opacity: 0, ease: "power3.inOut" }, 0.1)
       .to(backgroundRef.current, { opacity: 0.5, ease: "power3.inOut" }, 0.1)
       .to({}, { duration: 0.2 })
@@ -95,13 +95,15 @@ const About = () => {
           </div>
 
         </div>
+        <div className='absolute inset-0 flex justify-center items-center'>
         <img
           ref={fullScreenImageRef}
-          className='absolute absolute-center h-full object-contain cursor-pointer drop-shadow-2xl'
+          className='h-full w-auto cursor-pointer drop-shadow-2xl'
           src='images/poster_small.png'
           alt='Poster'
           onClick={handleScrollToStart} // Click to scroll to start of second ScrollTrigger
         />
+        </div>
         <div ref={cornerImageRef}>
           <img src='images/about_corner_tl.svg' className='absolute top-0 left-0 w-32 md:w-64 lg:w-sm' />
           <img src='images/about_corner_br.svg' className='absolute bottom-0 right-0 w-32 md:w-64 lg:w-sm' />

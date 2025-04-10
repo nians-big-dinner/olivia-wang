@@ -43,7 +43,7 @@ const ConceptArtTwo = () => {
         end: "bottom bottom",
         scrub: true
       }
-    });;
+    })
   }, { scope: sectionRef })
 
   return (

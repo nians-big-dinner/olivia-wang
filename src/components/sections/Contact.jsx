@@ -35,6 +35,7 @@ const Contact = () => {
         start: "bottom bottom",
         scrub: true,
         pin: true,
+        pinSpacing: false,
         anticipatePin: 0.5,
       }
     });
@@ -45,90 +46,93 @@ const Contact = () => {
       // .from(textBackgroundRef.current, { opacity: 0, scale: 0, duration: 1 })
       .from(textOneRef.current, { opacity: 0, y: 20, ease: "power2.out" }, "+=0.6")
       .from(textTwoRef.current, { opacity: 0, y: 20, ease: "power2.out" }, "+=0.6")
-  }, {scope: sectionRef})
+  }, { scope: sectionRef })
 
   return (
-    <footer ref={sectionRef} className='relative w-screen h-lvh bg-cover bg-no-repeat bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.5)_100%),url("/images/living_room_background.png")]'>
-      <div ref={foregroundRef} className="absolute w-full h-full bg-cover bg-no-repeat bg-[url('/images/living_room_foreground.png')]" />
-      <div ref={backgroundRef} className='absolute inset-0 bg-black opacity-0' />
-      <div ref={textRef} className='flex flex-col justify-center items-center gap-10 md:gap-20 w-full h-full font-dosis-regular text-lg lg:text-2xl xl:text-4xl  text-shadow-br-light text-white'>
-        <div ref={textOneRef} className='text-center flex flex-col gap-10 w-[80%]'>
-          <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400'>
-            Hello!
-          </div>
-          <p>
-            My name is Olivia and I’m a Visual Development and Background Artist currently
-            working in the animation and games industry!
-          </p>
-          <p>
-            I hope to combine my storytelling and
-            illustrative abilities to create stunning environments that pique your interest to learn more about my worlds!
-          </p>
-        </div>
-        <div ref={textTwoRef} className='flex flex-col gap-10 md:gap-0 md:flex-row w-full items-center justify-around'>
-          <address className='flex flex-col not-italic gap-1 md:gap-4'>
-            <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
-              <img src='./images/credits1.png' className='drop-shadow size-8 xl:size-16' />
-              Personal contact info:
+    <>
+      <footer ref={sectionRef} className='relative w-screen h-lvh bg-cover bg-no-repeat bg-[linear-gradient(to_top,rgba(0,0,0,0)_0%,rgba(17,17,17,0.3)_90%,rgba(17,17,17,0.5)_100%),url("/images/living_room_background.png")]'>
+        <div ref={foregroundRef} className="absolute w-full h-full bg-cover bg-no-repeat bg-[url('/images/living_room_foreground.png')]" />
+        <div ref={backgroundRef} className='absolute inset-0 bg-black opacity-0' />
+        <div ref={textRef} className='flex flex-col justify-center items-center gap-10 md:gap-20 w-full h-full font-dosis-regular text-lg lg:text-2xl xl:text-4xl  text-shadow-br-light text-white'>
+          <div ref={textOneRef} className='text-center flex flex-col gap-10 w-[80%]'>
+            <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400'>
+              Hello!
             </div>
-            <div>
-              &bull; Email :{" "}
-              <a
-                href="mailto:olivia.cywang@gmail.com"
-                className="hover:text-amber-300"
-              >
-                olivia.cywang@gmail.com{" "}
-                <span className='font-materialsymbols-regular align-middle'>outgoing_mail</span>
-              </a>
+            <p>
+              My name is Olivia and I’m a Visual Development and Background Artist currently
+              working in the animation and games industry!
+            </p>
+            <p>
+              I hope to combine my storytelling and
+              illustrative abilities to create stunning environments that pique your interest to learn more about my worlds!
+            </p>
+          </div>
+          <div ref={textTwoRef} className='flex flex-col gap-10 md:gap-0 md:flex-row w-full items-center justify-around'>
+            <address className='flex flex-col not-italic gap-1 md:gap-4'>
+              <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
+                <img src='./images/credits1.png' className='drop-shadow size-8 xl:size-16' />
+                Personal contact info:
+              </div>
+              <div>
+                &bull; Email :{" "}
+                <a
+                  href="mailto:olivia.cywang@gmail.com"
+                  className="hover:text-amber-300"
+                >
+                  olivia.cywang@gmail.com{" "}
+                  <span className='font-materialsymbols-regular align-middle'>outgoing_mail</span>
+                </a>
+              </div>
+
+              <div>
+                &bull; Linkedin :{" "}
+                <a
+                  href="https://ca.linkedin.com/in/whalesharkollie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300"
+                >
+                  Olivia Wang{" "}
+                  <span className='font-materialsymbols-regular align-middle'>open_in_new</span>
+                </a>
+              </div>
+              <div>
+                &bull; Instagram :{" "}
+                <a
+                  href="https://www.instagram.com/whalesharkollie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-300"
+                >
+                  whalesharkollie{" "}
+                  <span className='font-materialsymbols-regular align-middle'>open_in_new</span>
+                </a>
+              </div>
+            </address>
+            <div className='flex flex-col gap-1 md:gap-4'>
+              <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
+                <img src='./images/credits2.png' className='drop-shadow size-8 xl:size-16' />
+                Film Credits :
+              </div>
+              <div>&bull; Directed and Produced by : Olivia Wang </div>
+              <div>&bull; Music Composed by : Benjamin Young </div>
+              <div>
+                &bull; Website created by : Kristiyan Filipov <br />
+                (<a
+                  href="mailto:kristiyan.m.filipov@gmail.com"
+                  className="hover:text-amber-300"
+                >
+                  kristiyan.m.filipov@gmail.com{" "}
+                  <span className='font-materialsymbols-regular align-middle'>outgoing_mail</span>
+                </a>)
+              </div>
             </div>
 
-            <div>
-              &bull; Linkedin :{" "}
-              <a
-                href="https://ca.linkedin.com/in/whalesharkollie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-amber-300"
-              >
-                Olivia Wang{" "}
-                <span className='font-materialsymbols-regular align-middle'>open_in_new</span>
-              </a>
-            </div>
-            <div>
-              &bull; Instagram :{" "}
-              <a
-                href="https://www.instagram.com/whalesharkollie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-amber-300"
-              >
-                whalesharkollie{" "}
-                <span className='font-materialsymbols-regular align-middle'>open_in_new</span>
-              </a>
-            </div>
-          </address>
-          <div className='flex flex-col gap-1 md:gap-4'>
-            <div className='font-dosis-semibold text-xl lg:text-2xl xl:text-5xl text-amber-400 flex items-center gap-4'>
-              <img src='./images/credits2.png' className='drop-shadow size-8 xl:size-16' />
-              Film Credits :
-            </div>
-            <div>&bull; Directed and Produced by : Olivia Wang </div>
-            <div>&bull; Music Composed by : Benjamin Young </div>
-            <div>
-              &bull; Website created by : Kristiyan Filipov <br />
-              (<a
-                href="mailto:kristiyan.m.filipov@gmail.com"
-                className="hover:text-amber-300"
-              >
-                kristiyan.m.filipov@gmail.com{" "}
-                <span className='font-materialsymbols-regular align-middle'>outgoing_mail</span>
-              </a>)
-            </div>
           </div>
-
         </div>
-      </div>
-    </footer>
+      </footer>
+      <div className='w-screen h-lvh' />
+    </>
   )
 }
 

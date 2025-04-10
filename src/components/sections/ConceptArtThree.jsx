@@ -16,13 +16,13 @@ const ConceptArtThree = () => {
                 end: "bottom bottom",
                 scrub: true
             }
-        });;
+        })
     }, {scope: sectionRef})
     
     return (
-        <div ref={sectionRef} className='py-[40%] md:py-[20%] lg:py-[4%] w-screen relative bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.4)_90%,rgba(17,17,17,0.6)_100%),url("/images/red_background.png")]'>
-            <div ref={containerRef}>
-            <img src='./images/concept1.png' />
+        <div ref={sectionRef} className='py-[40%] md:py-[20%] lg:py-[4%] w-screen h-lvh relative bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.4)_90%,rgba(17,17,17,0.6)_100%),url("/images/red_background.png")]'>
+            <div ref={containerRef} className='flex flex-col justify-center items-center h-full w-full'>
+            <img src='./images/concept1.png' className='h-'/>
             <img src='./images/border.png' />
             <img src='./images/concept2.png' />
             </div>
