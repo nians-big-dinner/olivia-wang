@@ -31,7 +31,6 @@ const AboutTwo = () => {
               start: "bottom bottom",
               scrub: true,
               pin: true,
-              pinSpacing: false,
               anticipatePin: 0.5,
             }
           });
@@ -47,7 +46,6 @@ const AboutTwo = () => {
     }, {scope: sectionRef})
 
     return (
-        <>
         <div ref={sectionRef} className='relative w-screen h-lvh bg-cover xl:bg-center bg-no-repeat bg-[url("/images/kitchen_background.png")]'>
             <div className='absolute w-full h-full pointer-events-none
             bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(17,17,17,0.2)_90%,rgba(17,17,17,0.6)_100%)] z-10' />
@@ -66,8 +64,6 @@ const AboutTwo = () => {
                 </div>
             </div>
         </div>
-        <div className='w-screen h-lvh'/>
-    </>
     )
 }
 
