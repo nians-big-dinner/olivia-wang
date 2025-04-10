@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Hero from './components/sections/Hero';
 import Navbar from './components/sections/Navbar';
 import About from './components/sections/About';
@@ -8,8 +8,12 @@ import ConceptArtTwo from './components/sections/ConceptArtTwo';
 import ConceptArtThree from './components/sections/ConceptArtThree';
 import Contact from './components/sections/Contact';
 import Lenis from 'lenis';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const App = () => {
+  const wrapperRef = useRef(null);
+
+  // Lenis setup (do not touch)
   useEffect(() => {
     const lenis = new Lenis({
       easing: (t) => 2.1 * t - 1.2 * t * t + 0.1 * t * t * t,
@@ -23,26 +27,44 @@ const App = () => {
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy(); // Cleanup on unmount
+      lenis.destroy();
+    };
+  }, []);
+
+  // Disable scroll until page fully loads
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (el) {
+      disableBodyScroll(el);
+    }
+
+    const handleLoad = () => {
+      if (el) enableBodyScroll(el);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      if (el) enableBodyScroll(el);
     };
   }, []);
 
   return (
-
-        <div className="overflow-hidden relative w-screen">
-          <Navbar />
-          <main>
-          <Hero />
-          <div id='about-section'/>
-          <About />
-          <AboutTwo />
-          <div id='concept-art-section'/>
-          <ConceptArt />
-          <ConceptArtTwo />
-          <ConceptArtThree />
-          </main>
-          <Contact />
-        </div>
+    <div ref={wrapperRef} className="overflow-hidden relative w-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <div id='about-section' />
+        <About />
+        <AboutTwo />
+        <div id='concept-art-section' />
+        <ConceptArt />
+        <ConceptArtTwo />
+        <ConceptArtThree />
+      </main>
+      <Contact />
+    </div>
   );
 };
 
