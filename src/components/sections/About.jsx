@@ -98,7 +98,7 @@ const About = () => {
         <div className='absolute inset-0 flex justify-center items-center'>
         <img
           ref={fullScreenImageRef}
-          className='h-full w-auto cursor-pointer drop-shadow-2xl'
+          className='object-contain max-h-full overflow-hidden cursor-pointer drop-shadow-2xl'
           src='images/poster_small.png'
           alt='Poster'
           onClick={handleScrollToStart} // Click to scroll to start of second ScrollTrigger

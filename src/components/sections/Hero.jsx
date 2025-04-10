@@ -95,7 +95,7 @@ const Hero = () => {
           loop
           src='./videos/film.mp4'
         />
-        <div className='absolute bottom-1 left-4 flex font-materialsymbols-regular text-white drop-shadow-br text-6xl'>
+        <div className='absolute bottom-1 left-4 flex font-materialsymbols-regular text-white drop-shadow-br text-6xl z-20'>
           <button onClick={toggleVideo} className=' m-4 cursor-pointer transition-transform duration-150 active:scale-90'>
             {isVideoPlaying ? 'pause' : 'play_arrow'}
           </button>
